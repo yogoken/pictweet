@@ -1,7 +1,12 @@
 @extends('layout')
 
 @section('content')
-@foreach($tweets as $tweet)
-  <p>{{ $tweet->text }}</p>
-@endforeach
+<div class="contents row">
+  @foreach($tweets as $tweet)
+    <div class="content_post" style="background-image: url({{ $tweet->image }});">
+      <p>{{ $tweet->text }}</p>
+      <span class="name">{{ $tweet->name }}</span>
+    </div>
+  @endforeach
+</div>
 @endsection
